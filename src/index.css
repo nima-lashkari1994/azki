@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'Vazir';
+    src: url("/src/assets/fonts/vazir.ttf");
+    font-weight: 400; /* Black weight is typically 900 */
+    font-style: normal;
+}
