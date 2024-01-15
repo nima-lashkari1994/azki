@@ -5,7 +5,9 @@ import * as Styled from './styles';
 type TypographyProps = {
     children:React.ReactNode,
     variant?:Variant,
-    as?: keyof HTMLElementTagNameMap
+    as?: keyof HTMLElementTagNameMap,
+    bold?:boolean,
+    className?:string
 }
 
 const variantMapping = {
@@ -13,11 +15,11 @@ const variantMapping = {
     heading2:'h2',
 } as Record<string,string>
 
-const Typography = ({children,variant="bodyMedium",as}:TypographyProps) => {
+const Typography = ({children,variant="bodyMedium",as,className,bold=false}:TypographyProps) => {
 
     const element = as || variantMapping[variant] || "p"
     return (
-        <Styled.Typography as={element} $variant={variant}>
+        <Styled.Typography as={element} $variant={variant} $bold={bold} className={className}>
             {children}
         </Styled.Typography>
     );

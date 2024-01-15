@@ -1,9 +1,9 @@
 import React from 'react';
-import Navbar from "@common/ui/layout/navbar";
+import Navbar from "./navbar";
 import {Outlet} from "react-router-dom";
 import * as Styled from './styles';
 
-const Layout = () => {
+const AppLayout = () => {
     return (
         <Styled.Layout>
             <Navbar/>
@@ -14,4 +14,4 @@ const Layout = () => {
     );
 };
 
-export default Layout;
+export default AppLayout;

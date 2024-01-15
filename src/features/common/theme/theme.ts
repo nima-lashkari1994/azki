@@ -2,7 +2,16 @@ const theme = {
     colors: {
         primary: "#26B79B",
         secondary: "#FFFBEB",
+        background:'#fff',
+        border:'#D6D6D6',
+        disabled:'#FAFAFA',
+        hover:'#ccc',
+        text:{
+            main:'#000',
+            secondary:'#D6D6D6'
+        }
     },
+    radius:'0.7rem',
     spacing: [
         '0.25rem',
         '0.5rem',

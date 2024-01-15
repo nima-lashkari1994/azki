@@ -4,7 +4,7 @@ export const Navbar = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${props => props.theme.spacing[2]} ${props => props.theme.spacing[6]};
+  padding: ${props => props.theme.spacing[2]};
   
   .navbar__logo{
     width:1.5rem;
