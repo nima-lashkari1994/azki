@@ -2,6 +2,7 @@ import React from 'react';
 import * as Styled from './styles';
 import {ErrorMessage, useField} from "formik";
 import Typography from "@common/ui/typography";
+import FieldWrapper from "@common/field/fieldWrapper";
 
 type TextFieldProps = {
     name: string,
@@ -26,14 +27,12 @@ const TextField = ({
     }
 
     return (
-        <Styled.Wrapper $isError={!!meta.error && meta.touched}>
-            <input onChange={handleChange} className={"text-field__input"} {...props} type={type} {...inputProps}
-                   placeholder={placeholder}/>
-            <ErrorMessage name={name} component="div"
-                          render={errorMessage => <Typography className={"text-field__error"}
-                                                              variant={"bodySmall"}>{errorMessage}</Typography>}/>
+        <Styled.Wrapper>
+            <FieldWrapper {...meta} name={name}>
+                <input onChange={handleChange} className={"field__input"} {...props} type={type} {...inputProps}
+                       placeholder={placeholder}/>
+            </FieldWrapper>
         </Styled.Wrapper>
-
     );
 };
 

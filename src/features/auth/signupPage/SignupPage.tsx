@@ -2,10 +2,10 @@ import React from 'react';
 import {PageLayout} from "@common/ui/layout";
 import {Form, Formik} from "formik";
 import validationSchema from './validation';
-import TextField from "@common/ui/textField";
 import * as Styled from './styles';
 import {persianAlphabetRegex} from "@common/utils/regex";
 import Button from "@common/ui/button";
+import {SelectField, TextField} from "@common/field";
 
 type FormValues = {
     firstName: string,
@@ -26,7 +26,8 @@ const SignupPage = () => {
                     firstName: '',
                     lastName: '',
                     phoneNumber: '',
-                    password: ''
+                    password: '',
+                    test:'',
                 }}
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}
