@@ -8,7 +8,7 @@ const theme = {
         disabled:'#FAFAFA',
         hover:'#ccc',
         text:{
-            main:'#000',
+            primary:'#000',
             secondary:'#979797',
             tertiary:'#fff'
         }

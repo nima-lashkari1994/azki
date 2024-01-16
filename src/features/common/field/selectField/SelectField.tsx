@@ -3,6 +3,7 @@ import * as Styled from './styles';
 import {useField} from "formik";
 import FieldWrapper from "@common/field/fieldWrapper";
 import ArrowIcon from "@common/ui/icon/ArrowIcon";
+import cn from 'classnames';
 
 type SelectFieldProps = {
     name:string,
@@ -13,11 +14,11 @@ const SelectField = ({name,placeholder,...props}:SelectFieldProps) => {
     const [inputProps, meta] = useField(name);
 
     return (
-        <Styled.Wrapper>
+        <Styled.Wrapper className={cn({empty:!inputProps.value})}>
             <FieldWrapper name={name} {...meta}>
                 <ArrowIcon className={"select-field__arrow"}/>
                 <select {...inputProps} {...props} className={"field__input"}>
-                    <option className={"select-field__default-option"} value="" disabled selected>{placeholder}</option>
+                    <option value="" disabled hidden>{placeholder}</option>
                     {props.children}
                 </select>
             </FieldWrapper>
