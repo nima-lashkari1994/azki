@@ -20,6 +20,7 @@ export const Layout  = styled.main`
   .layout__content {
     @media (max-width: 900px) {
         width: 100%;
+      padding: ${props => props.theme.spacing[2]} ${props => props.theme.spacing[3]};
     }
     width: 55%;
     padding: ${props => props.theme.spacing[4]} ${props => props.theme.spacing[6]};
