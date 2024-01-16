@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Vazir', serif;
     height:100%;
   }
-  button{
+  button,input{
     font-family: inherit;
   }
 `;

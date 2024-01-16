@@ -1,3 +1,3 @@
 export {AuthProvider} from './authProvider';
 export {useAuth} from './authProvider';
-export {default as Signup} from './signup';
+export {default as SignupPage} from './signupPage';

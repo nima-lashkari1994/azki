@@ -11,7 +11,8 @@ export const Layout  = styled.main`
   background-size: 50% ,auto;
   
   .layout__content {
-    max-width: 50%;
+    width: 55%;
+    padding: ${props => props.theme.spacing[4]} ${props => props.theme.spacing[6]};
   }
 }
 `;

@@ -2,16 +2,18 @@ const theme = {
     colors: {
         primary: "#26B79B",
         secondary: "#FFFBEB",
+        error:'red',
         background:'#fff',
         border:'#D6D6D6',
         disabled:'#FAFAFA',
         hover:'#ccc',
         text:{
             main:'#000',
-            secondary:'#D6D6D6'
+            secondary:'#979797',
+            tertiary:'#fff'
         }
     },
-    radius:'0.7rem',
+    radius:['0.3rem','0.7rem','1rem','2rem'],
     spacing: [
         '0.25rem',
         '0.5rem',

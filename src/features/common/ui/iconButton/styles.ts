@@ -4,7 +4,7 @@ export const Wrapper = styled.button`
   background-color: ${props => props.theme.colors.background};
   border: solid 1px ${props => props.theme.colors.border};
   box-shadow: none;
-  border-radius: ${props => props.theme.radius};
+  border-radius: ${props => props.theme.radius[1]};
   padding: ${props => props.theme.spacing[2]};
   width: 6.5rem;
   height: 6.5rem;
