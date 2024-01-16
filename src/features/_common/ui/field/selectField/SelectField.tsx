@@ -1,8 +1,8 @@
 import React from 'react';
 import * as Styled from './styles';
 import {useField} from "formik";
-import FieldWrapper from "@common/field/fieldWrapper";
-import ArrowIcon from "@common/ui/icon/ArrowIcon";
+import FieldWrapper from "@features/_common/ui/field/fieldWrapper";
+import ArrowIcon from "@features/_common/ui/icon/ArrowIcon";
 import cn from 'classnames';
 
 type SelectFieldProps = {

@@ -5,7 +5,7 @@ import validationSchema from './validation';
 import * as Styled from './styles';
 import {persianAlphabetRegex} from "@common/utils/regex";
 import Button from "@common/ui/button";
-import {SelectField, TextField} from "@common/field";
+import {SelectField, TextField} from "@common/ui/field";
 
 type FormValues = {
     firstName: string,

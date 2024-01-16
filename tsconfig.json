@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "paths": {
-      "@common/*": ["src/features/common/*"],
+      "@common/*": ["src/features/_common/*"],
       "@features/*": ["src/features/*"],
       "@assets/*": ["src/assets/*"],
     },

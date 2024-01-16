@@ -1,5 +1,5 @@
 import React from 'react';
-import {ThemeProvider} from "./features/common/theme";
+import {ThemeProvider} from "./features/_common/theme";
 import {AppLayout} from "@common/ui/layout";
 import GlobalStyle from "./styles";
 import {BrowserRouter, Route, Routes} from "react-router-dom";

@@ -1,8 +1,7 @@
 import React from 'react';
 import * as Styled from './styles';
-import {ErrorMessage, useField} from "formik";
-import Typography from "@common/ui/typography";
-import FieldWrapper from "@common/field/fieldWrapper";
+import {useField} from "formik";
+import FieldWrapper from "@common/ui/field/fieldWrapper";
 
 type TextFieldProps = {
     name: string,
