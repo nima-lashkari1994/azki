@@ -14,10 +14,10 @@ export const Wrapper = styled.div<Props>`
     padding: ${props => props.theme.spacing[1]} ${props => props.theme.spacing[2]};
     border: solid 1px ${props => props.$isError ? props.theme.colors.error : props.theme.colors.border};
     border-radius: ${props => props.theme.radius[0]};
-    color: inherit;
+    color: ${props => props.theme.colors.text.primary};
 
     &::placeholder {
-      color: inherit;
+      color: ${props => props.theme.colors.text.secondary};
     }
 
     &:focus {

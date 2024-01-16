@@ -17,7 +17,7 @@ const SelectField = ({name,placeholder,...props}:SelectFieldProps) => {
             <FieldWrapper name={name} {...meta}>
                 <ArrowIcon className={"select-field__arrow"}/>
                 <select {...inputProps} {...props} className={"field__input"}>
-                    <option value="" disabled selected>{placeholder}</option>
+                    <option className={"select-field__default-option"} value="" disabled selected>{placeholder}</option>
                     {props.children}
                 </select>
             </FieldWrapper>

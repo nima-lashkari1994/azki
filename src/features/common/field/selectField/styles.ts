@@ -7,6 +7,10 @@ export const Wrapper = styled.div`
     cursor: pointer;
     appearance: none;
   }
+  
+  .select-field__default-option{
+    color:${props => props.theme.colors.text.secondary}
+  }
 
   .select-field__arrow {
     position: absolute;

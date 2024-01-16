@@ -43,6 +43,13 @@ const SignupPage = () => {
                     <div className={"signup-page__form__row"}>
                         <TextField name={"password"} type={"password"} placeholder={"رمز عبور"}/>
                     </div>
+                    <div className={"signup-page__form__row"}>
+                        <SelectField name={"test"} placeholder={"رمز عبور"}>
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </SelectField>
+                    </div>
                     <div className={"signup-page__form__action"}>
                         <Button type={"submit"}>ثبت نام</Button>
                     </div>

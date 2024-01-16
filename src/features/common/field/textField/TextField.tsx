@@ -17,19 +17,19 @@ const TextField = ({
                        ...props
                    }: TextFieldProps) => {
 
-    const [{onChange, ...inputProps}, meta] = useField(name);
+    const [inputProps, meta] = useField(name);
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
         if (regex && e.target.value && !regex.test(e.target.value))
             e.preventDefault()
         else
-            onChange(e)
+            inputProps.onChange(e)
     }
 
     return (
         <Styled.Wrapper>
             <FieldWrapper {...meta} name={name}>
-                <input onChange={handleChange} className={"field__input"} {...props} type={type} {...inputProps}
+                <input {...inputProps} onChange={handleChange} className={"field__input"} {...props} type={type}
                        placeholder={placeholder}/>
             </FieldWrapper>
         </Styled.Wrapper>
