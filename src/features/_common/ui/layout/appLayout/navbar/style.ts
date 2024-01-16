@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
 export const Navbar = styled.header`
+
+  @media (max-width: 900px) {
+    .header{
+      display: none;
+    }
+  }
+  
   display: flex;
   justify-content: space-between;
   align-items: center;

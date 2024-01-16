@@ -12,7 +12,7 @@ const Navbar = () => {
     return (
         <Styled.Navbar>
             <Logo className={"navbar__logo"}/>
-            <Typography variant={"heading2"}>سامانه مقایسه و خرید آنلاین بیمه</Typography>
+            <Typography className={"header"} variant={"heading2"}>سامانه مقایسه و خرید آنلاین بیمه</Typography>
             <div>{user ? <div className={"user-info"}>
                 <UserIcon className={"user-icon"}/>
                 <div>{user.firstName} {user.lastName}</div>
