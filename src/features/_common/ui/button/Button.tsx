@@ -6,9 +6,9 @@ import Typography from "@common/ui/typography";
 type ButtonProps = {
     variant? : ButtonVariants
 } & React.HTMLProps<HTMLButtonElement>
-const Button = ({children,variant="contained"}:ButtonProps) => {
+const Button = ({children,variant="contained",...props}:ButtonProps) => {
     return (
-        <Styled.Wrapper className={variant}>
+        <Styled.Wrapper className={variant} {...props}>
             {typeof children === 'function' ? children : <Typography variant={"bodyMedium"}>{children}</Typography>}
         </Styled.Wrapper>
     );

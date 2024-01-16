@@ -3,20 +3,23 @@ import {PageLayout} from "@common/ui/layout";
 import {Form, Formik} from "formik";
 import validationSchema from './validation';
 import * as Styled from './styles';
-import {persianAlphabetRegex} from "@common/utils/regex";
+import {englishCharactersRegex, persianAlphabetRegex} from "@common/utils/regex";
 import Button from "@common/ui/button";
-import {SelectField, TextField} from "@common/ui/field";
-
-type FormValues = {
-    firstName: string,
-    lastName: string,
-    phoneNumber: string,
-    password: string
-}
+import {TextField} from "@common/ui/field";
+import authAPI from "@features/auth/_common/api";
+import {User} from "@features/auth/_common/types";
+import {useAuth} from "@features/auth";
+import {useNavigate} from "react-router";
 
 const SignupPage = () => {
-    function handleSubmit(values: FormValues, {setSubmitting}: { setSubmitting: (isSubmitting: boolean) => void }) {
-        console.log(values)
+
+    const navigate = useNavigate()
+    const {onLogin} = useAuth();
+    async function handleSubmit(values: User, {setSubmitting}: { setSubmitting: (isSubmitting: boolean) => void }) {
+        setSubmitting(true);
+        const {data: user} = await authAPI.signup(values);
+        onLogin(user);
+        navigate("/")
     }
 
     return (
@@ -27,33 +30,28 @@ const SignupPage = () => {
                     lastName: '',
                     phoneNumber: '',
                     password: '',
-                    test:'',
+                    test: '',
                 }}
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}
             >
-                <Form className={"signup-page__form"}>
-                    <div className={"signup-page__form__row"}>
-                        <TextField regex={persianAlphabetRegex} name={"firstName"} placeholder={"نام"}/>
-                        <TextField regex={persianAlphabetRegex} name={"lastName"} placeholder={"نام خانوادگی"}/>
-                    </div>
-                    <div className={"signup-page__form__row"}>
-                        <TextField name={"phoneNumber"} type={"tel"} placeholder={"شماره موبایل"}/>
-                    </div>
-                    <div className={"signup-page__form__row"}>
-                        <TextField name={"password"} type={"password"} placeholder={"رمز عبور"}/>
-                    </div>
-                    <div className={"signup-page__form__row"}>
-                        <SelectField name={"test"} placeholder={"رمز عبور"}>
-                            <option value="option1">Option 1</option>
-                            <option value="option2">Option 2</option>
-                            <option value="option3">Option 3</option>
-                        </SelectField>
-                    </div>
-                    <div className={"signup-page__form__action"}>
-                        <Button type={"submit"}>ثبت نام</Button>
-                    </div>
-                </Form>
+                {(formik) => (
+                    <Form className={"signup-page__form"}>
+                        <div className={"signup-page__form__row"}>
+                            <TextField regex={persianAlphabetRegex} name={"firstName"} placeholder={"نام"}/>
+                            <TextField regex={persianAlphabetRegex} name={"lastName"} placeholder={"نام خانوادگی"}/>
+                        </div>
+                        <div className={"signup-page__form__row"}>
+                            <TextField name={"phoneNumber"} type={"tel"} inputMode="numeric" placeholder={"شماره موبایل"}/>
+                        </div>
+                        <div className={"signup-page__form__row"}>
+                            <TextField name={"password"} regex={englishCharactersRegex} type={"password"} placeholder={"رمز عبور"}/>
+                        </div>
+                        <div className={"signup-page__form__action"}>
+                            <Button type={"submit"} disabled={formik.isSubmitting}>ثبت نام</Button>
+                        </div>
+                    </Form>
+                )}
             </Formik>
         </Styled.Wrapper>
     );

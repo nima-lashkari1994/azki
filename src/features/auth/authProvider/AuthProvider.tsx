@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import AuthContext from "./AuthContext";
-import {User} from "./types";
+import {User} from "../_common/types";
 
 type AuthProviderProps = {
     children:React.ReactNode

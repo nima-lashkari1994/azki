@@ -7,6 +7,7 @@ import cn from 'classnames';
 
 type SelectFieldProps = {
     name:string,
+    placeholder:string,
 } & React.HTMLProps<HTMLSelectElement>;
 
 const SelectField = ({name,placeholder,...props}:SelectFieldProps) => {
@@ -18,7 +19,7 @@ const SelectField = ({name,placeholder,...props}:SelectFieldProps) => {
             <FieldWrapper name={name} {...meta}>
                 <ArrowIcon className={"select-field__arrow"}/>
                 <select {...inputProps} {...props} className={"field__input"}>
-                    <option value="" disabled hidden>{placeholder}</option>
+                    <option value="" selected disabled hidden>{placeholder}</option>
                     {props.children}
                 </select>
             </FieldWrapper>

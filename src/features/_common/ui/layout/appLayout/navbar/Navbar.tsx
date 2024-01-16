@@ -12,7 +12,7 @@ const Navbar = () => {
         <Styled.Navbar>
             <Logo className={"navbar__logo"}/>
             <Typography variant={"heading2"}>سامانه مقایسه و خرید آنلاین بیمه</Typography>
-            <div>{user ? user.name : 'ثبت نام'}</div>
+            <div>{user ? user.firstName : 'ثبت نام'}</div>
         </Styled.Navbar>
     );
 };

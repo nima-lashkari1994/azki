@@ -1,15 +1,28 @@
-import React from 'react';
-import {ErrorMessage, Field} from "formik";
+import React, {useEffect, useState} from 'react';
+import {SelectField} from "@common/ui/field";
+import thirdPartyAPI from "@features/thirdParty/_common/api";
+import {Company} from "@features/thirdParty/_common/types";
 
 const PrevInsuranceForm = () => {
+
+    const [companies,setCompanies] = useState<Company[]>()
+
+    async function getCompanies(){
+        const {data} = await thirdPartyAPI.getThirdCompanies()
+        setCompanies(data);
+    }
+
+    useEffect(() => {
+        getCompanies();
+    }, []);
+
     return (
         <div>
-            <h2>s2</h2>
-            <div>
-                <label htmlFor="s2">s2</label>
-                <Field type="text" id="s2" name="s2"/>
-                <ErrorMessage name="s2" component="div"/>
-            </div>
+           <SelectField name={"prevInsuranceCompany"} placeholder={"شرکت بیمه‌گر قبلی"}>
+               {companies?.map(company => (
+                   <option value={company.id}>{company.title}</option>
+               ))}
+           </SelectField>
         </div>
     )
 };

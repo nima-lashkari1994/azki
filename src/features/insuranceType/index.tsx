@@ -4,8 +4,11 @@ import IconButton from "@common/ui/iconButton";
 import InsuranceIcon from "@common/ui/icon/InsuranceIcon";
 import {PageLayout} from "@common/ui/layout";
 import * as Styled from './styles';
+import {useNavigate} from "react-router";
 
 const InsuranceType = () => {
+
+    const navigate = useNavigate();
 
     return (
         <Styled.Wrapper as={PageLayout} title={"انتخاب بیمه"}>
@@ -17,6 +20,7 @@ const InsuranceType = () => {
                     </Typography>
                 }
                 onClick={() => {
+                    navigate("/third-party")
                 }}
             />
             <IconButton

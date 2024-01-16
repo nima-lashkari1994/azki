@@ -1,17 +1,33 @@
-import React from 'react';
-import {ErrorMessage, Field} from "formik";
+import React, {useEffect, useState} from 'react';
+import {Discount} from "@features/thirdParty/_common/types";
+import thirdPartyAPI from "@features/thirdParty/_common/api/ThirdPartyAPI";
+import {SelectField} from "@common/ui/field";
 
 const DiscountForm = () => {
+    const [discounts,setDiscounts] = useState<Discount[]>()
+
+    async function getDiscounts(){
+        const {data} = await thirdPartyAPI.getThirdDiscounts()
+        setDiscounts(data);
+    }
+
+    useEffect(() => {
+        getDiscounts();
+    }, []);
+
     return (
         <div>
-            <h2>s3</h2>
-            <div>
-                <label htmlFor="s3">s3:</label>
-                <Field type="text" id="s3" name="s3"/>
-                <ErrorMessage name="s3" component="div"/>
-            </div>
+            <SelectField name={"thirdPartyDiscount"} placeholder={"درصد تخفیف ثالث"}>
+                {discounts?.map(discount => (
+                    <option value={discount.id}>{discount.title}</option>
+                ))}
+            </SelectField>
+            <SelectField name={"driverDiscount"} placeholder={"درصد تخفیف حوادث راننده"}>
+                {discounts?.map(discount => (
+                    <option value={discount.id}>{discount.title}</option>
+                ))}
+            </SelectField>
         </div>
-
     )
 };
 

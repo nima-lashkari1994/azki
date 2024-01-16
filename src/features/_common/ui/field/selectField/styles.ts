@@ -23,7 +23,7 @@ export const Wrapper = styled.div`
   .select-field__arrow {
     position: absolute;
     left: ${props => props.theme.spacing[1]};
-    top: 20%;
+    top: 25%;
     width: 8px;
     height: 8px;
     color: inherit;

@@ -7,6 +7,7 @@ const theme = {
         border:'#D6D6D6',
         disabled:'#FAFAFA',
         hover:'#ccc',
+        shadow:'#ccc',
         text:{
             primary:'#000',
             secondary:'#979797',
