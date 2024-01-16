@@ -20,7 +20,7 @@ const PrevInsuranceForm = () => {
         <div>
            <SelectField name={"prevInsuranceCompany"} placeholder={"شرکت بیمه‌گر قبلی"}>
                {companies?.map(company => (
-                   <option value={company.id}>{company.title}</option>
+                   <option value={company.title}>{company.title}</option>
                ))}
            </SelectField>
         </div>

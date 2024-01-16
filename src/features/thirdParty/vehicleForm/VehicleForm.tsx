@@ -21,17 +21,17 @@ const VehicleForm = () => {
         getVehicleTypes();
     }, []);
 
-    const vehicleModels = vehicleTypes?.filter(vehicleType => vehicleType.id == selectedVehicleType)?.[0]?.usages;
+    const vehicleModels = vehicleTypes?.filter(vehicleType => vehicleType.title == selectedVehicleType)?.[0]?.usages;
     return (
         <Styled.Wrapper>
             <SelectField name={"vehicleType"} placeholder={"نوع خودرو"}>
                 {vehicleTypes?.map(vehicleType => (
-                    <option key={vehicleType.id} value={vehicleType.id}>{vehicleType.title}</option>
+                    <option key={vehicleType.id} value={vehicleType.title}>{vehicleType.title}</option>
                 ))}
             </SelectField>
             <SelectField name={"vehicleModel"} placeholder={"مدل خودرو"}>
                 {vehicleModels?.map(vehicleModel => (
-                    <option key={vehicleModel.id} value={vehicleModel.id}>{vehicleModel.title}</option>
+                    <option key={vehicleModel.id} value={vehicleModel.title}>{vehicleModel.title}</option>
                 ))}
             </SelectField>
         </Styled.Wrapper>

@@ -57,7 +57,7 @@ const ThirdParty = () => {
         if (!isLastStep)
             handleNextStep();
         else {
-            alert("آیدی ")
+            alert(JSON.stringify(values,null,2))
         }
 
     };
