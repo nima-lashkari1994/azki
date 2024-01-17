@@ -19,12 +19,12 @@ const DiscountForm = () => {
         <div>
             <SelectField name={"thirdPartyDiscount"} placeholder={"درصد تخفیف ثالث"}>
                 {discounts?.map(discount => (
-                    <option value={discount.title}>{discount.title}</option>
+                    <option key={discount.id} value={discount.title}>{discount.title}</option>
                 ))}
             </SelectField>
             <SelectField name={"driverDiscount"} placeholder={"درصد تخفیف حوادث راننده"}>
                 {discounts?.map(discount => (
-                    <option value={discount.title}>{discount.title}</option>
+                    <option key={discount.id} value={discount.title}>{discount.title}</option>
                 ))}
             </SelectField>
         </div>

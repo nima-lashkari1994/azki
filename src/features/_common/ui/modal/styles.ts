@@ -14,9 +14,8 @@ export const Wrapper = styled.div`
 
   .modal__content {
     z-index: 1000;
-    width: 500px;
-    height: 400px;
     position: fixed;
+    min-width: 300px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
