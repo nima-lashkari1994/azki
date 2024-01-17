@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
 
-  .description {
+  .third-party__form-description {
     color: ${props => props.theme.colors.text.secondary};
+    margin-bottom: ${props => props.theme.spacing[3]};
   }
 
-  .actions {
+  .third-party__actions {
     display: flex;
     justify-content: space-between;
   }

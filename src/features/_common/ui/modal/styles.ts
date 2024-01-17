@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
 
-  .modal-backdrop {
+  .modal__backdrop {
     z-index: 10;
     position: fixed;
     left: 0;
@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
     background-color: rgba(0, 0, 0, 0.6);
   }
 
-  .modal-content {
+  .modal__content {
     z-index: 1000;
     width: 500px;
     height: 400px;
@@ -25,7 +25,7 @@ export const Wrapper = styled.div`
     border-radius: ${props => props.theme.radius[1]};
   }
 
-  .close-button {
+  .modal__close-button {
     background-color: transparent;
     border: none;
     cursor: pointer;

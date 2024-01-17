@@ -6,7 +6,7 @@ import {PageLayout} from "@common/ui/layout";
 import * as Styled from './styles';
 import {useNavigate} from "react-router";
 
-const InsuranceType = () => {
+const InsuranceTypePage = () => {
 
     const navigate = useNavigate();
 
@@ -38,4 +38,4 @@ const InsuranceType = () => {
     );
 };
 
-export default InsuranceType;
+export default InsuranceTypePage;

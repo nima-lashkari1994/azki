@@ -9,12 +9,12 @@ export const Wrapper = styled.div`
   }
 
   &.empty {
-    .field__input {
+    select {
       color: ${props => props.theme.colors.text.secondary};
     }
   }
 
-  .field__input {
+  select {
     cursor: pointer;
     appearance: none;
     color: ${props => props.theme.colors.text.primary};

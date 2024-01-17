@@ -8,7 +8,7 @@ export const Wrapper = styled.div<Props>`
   width: 100%;
   color: ${props => props.theme.colors.text.secondary};
 
-  .field__input {
+  input , select {
     direction: rtl;
     width: 100%;
     padding: ${props => props.theme.spacing[1]} ${props => props.theme.spacing[2]};

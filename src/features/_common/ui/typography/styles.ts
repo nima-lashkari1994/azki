@@ -5,7 +5,7 @@ type Props = {
     $variant:Variant,
     $bold:boolean
 }
-export const Typography = styled.div<Props>`
+export const Wrapper = styled.div<Props>`
     font-weight: ${props => props.$bold ? 600 :props.theme.typography[props.$variant].fontWeight};
     font-size: ${props => props.theme.typography[props.$variant].fontSize};
 `;

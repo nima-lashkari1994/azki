@@ -32,7 +32,7 @@ const steps = [
 
 ]
 
-const ThirdParty = () => {
+const ThirdPartyPage = () => {
 
     const [isOpen, setOpen] = useState(false);
     const navigate = useNavigate();
@@ -84,12 +84,12 @@ const ThirdParty = () => {
         <Styled.Wrapper as={PageLayout} title={"بیمه شخص ثالث"}>
             <FormikProvider value={formik}>
                 <Form>
-                    <Typography className={"description"}
+                    <Typography className={"third-party__form-description"}
                                 variant={"bodyLarge"}>{currentStep.description}</Typography>
                     <div key={currentStep.id}>
                         {currentStep.form}
                     </div>
-                    <div className={"actions"}>
+                    <div className={"third-party__actions"}>
                         <Button variant={"outlined"} type="button" onClick={handlePrevStep}>
                             {isFirstStep ? 'بازگشت' : "مرحله قبل"}
                         </Button>
@@ -115,4 +115,4 @@ const ThirdParty = () => {
 };
 
 
-export default ThirdParty;
+export default ThirdPartyPage;

@@ -10,14 +10,14 @@ const Navbar = () => {
     const {user} = useAuth();
 
     return (
-        <Styled.Navbar>
+        <Styled.Wrapper>
             <Logo className={"navbar__logo"}/>
             <Typography className={"header"} variant={"heading2"}>سامانه مقایسه و خرید آنلاین بیمه</Typography>
-            <div>{user ? <div className={"user-info"}>
-                <UserIcon className={"user-icon"}/>
+            <div>{user ? <div className={"navbar__user-info"}>
+                <UserIcon className={"navbar__user-icon"}/>
                 <div>{user.firstName} {user.lastName}</div>
             </div> : 'ثبت نام'}</div>
-        </Styled.Navbar>
+        </Styled.Wrapper>
     );
 };
 

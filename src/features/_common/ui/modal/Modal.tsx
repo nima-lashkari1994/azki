@@ -14,10 +14,9 @@ const Modal = ({children, isOpen, handleClose}: ModalProps) => {
 
     return (
         createPortal(<Styled.Wrapper>
-            <div className={"modal-backdrop"} onClick={handleClose}/>
-
-            <div className="modal-content">
-                <button onClick={handleClose} className="close-button">
+            <div className={"modal__backdrop"} onClick={handleClose}/>
+            <div className="modal__content">
+                <button onClick={handleClose} className="modal__close-button">
                     x
                 </button>
                 {children}

@@ -5,12 +5,12 @@ import * as Styled from './styles';
 
 const AppLayout = () => {
     return (
-        <Styled.Layout>
+        <Styled.Wrapper>
             <Navbar/>
-            <section className={"layout__content"}>
+            <section className={"app-layout__content"}>
                 <Outlet/>
             </section>
-        </Styled.Layout>
+        </Styled.Wrapper>
     );
 };
 

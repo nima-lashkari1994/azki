@@ -28,7 +28,7 @@ const TextField = ({
     return (
         <Styled.Wrapper>
             <FieldWrapper {...meta} name={name}>
-                <input {...inputProps} onChange={handleChange} className={"field__input"} {...props} type={type}
+                <input {...inputProps} onChange={handleChange} {...props} type={type}
                        placeholder={placeholder}/>
             </FieldWrapper>
         </Styled.Wrapper>

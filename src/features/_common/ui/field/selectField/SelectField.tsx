@@ -18,7 +18,7 @@ const SelectField = ({name,placeholder,...props}:SelectFieldProps) => {
         <Styled.Wrapper className={cn({empty:!inputProps.value})}>
             <FieldWrapper name={name} {...meta}>
                 <ArrowIcon className={"select-field__arrow"}/>
-                <select {...inputProps} {...props} className={"field__input"}>
+                <select {...inputProps} {...props}>
                     <option value="" selected disabled hidden>{placeholder}</option>
                     {props.children}
                 </select>

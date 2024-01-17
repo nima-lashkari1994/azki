@@ -19,9 +19,9 @@ const Typography = ({children,variant="bodyMedium",as,className,bold=false}:Typo
 
     const element = as || variantMapping[variant] || "p"
     return (
-        <Styled.Typography as={element} $variant={variant} $bold={bold} className={className}>
+        <Styled.Wrapper as={element} $variant={variant} $bold={bold} className={className}>
             {children}
-        </Styled.Typography>
+        </Styled.Wrapper>
     );
 };
 

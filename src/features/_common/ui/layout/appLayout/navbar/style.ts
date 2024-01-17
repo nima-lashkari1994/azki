@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Navbar = styled.header`
+export const Wrapper = styled.header`
 
   @media (max-width: 900px) {
     .header{
@@ -13,10 +13,10 @@ export const Navbar = styled.header`
   align-items: center;
   padding: ${props => props.theme.spacing[2]};
   
-  .user-info{
+  .navbar__user-info{
     display: flex;
     align-items: center;
-    .user-icon{
+    .navbar__user-icon{
       width: 15px;
       height: 15px;
       margin-left: ${props => props.theme.spacing[1]};

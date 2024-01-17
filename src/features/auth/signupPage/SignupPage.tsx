@@ -36,18 +36,18 @@ const SignupPage = () => {
                 onSubmit={handleSubmit}
             >
                 {(formik) => (
-                    <Form className={"signup-page__form"}>
-                        <div className={"signup-page__form__row"}>
+                    <Form className={"signup__form"}>
+                        <div className={"row"}>
                             <TextField regex={persianAlphabetRegex} name={"firstName"} placeholder={"نام"}/>
                             <TextField regex={persianAlphabetRegex} name={"lastName"} placeholder={"نام خانوادگی"}/>
                         </div>
-                        <div className={"signup-page__form__row"}>
+                        <div className={"row"}>
                             <TextField name={"phoneNumber"} type={"tel"} inputMode="numeric" placeholder={"شماره موبایل"}/>
                         </div>
-                        <div className={"signup-page__form__row"}>
+                        <div className={"row"}>
                             <TextField name={"password"} regex={englishCharactersRegex} type={"password"} placeholder={"رمز عبور"}/>
                         </div>
-                        <div className={"signup-page__form__action"}>
+                        <div className={"signup__action"}>
                             <Button type={"submit"} disabled={formik.isSubmitting}>ثبت نام</Button>
                         </div>
                     </Form>

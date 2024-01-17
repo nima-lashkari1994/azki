@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import * as Styled from './styles';
 import {SelectField} from "@common/ui/field";
 import thirdPartyAPI from "@features/thirdParty/_common/api";
@@ -20,7 +20,7 @@ const VehicleForm = () => {
         getVehicleTypes();
     }, []);
 
-    const vehicleModels = vehicleTypes?.filter(vehicleType => vehicleType.title == selectedVehicleType)?.[0]?.usages;
+    const vehicleModels = vehicleTypes?.filter(vehicleType => vehicleType.title === selectedVehicleType)?.[0]?.usages;
     return (
         <Styled.Wrapper>
             <SelectField name={"vehicleType"} placeholder={"نوع خودرو"}>

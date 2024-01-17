@@ -3,9 +3,9 @@ import {ThemeProvider} from "./features/_common/theme";
 import {AppLayout} from "@common/ui/layout";
 import GlobalStyle from "./styles";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import InsuranceType from "@features/insuranceType";
-import ThirdParty from "@features/thirdParty/ThirdParty";
+import {InsuranceTypePage} from "@features/insuranceType";
 import {AuthorizedRoute, AuthProvider, SignupPage} from "@features/auth";
+import { ThirdPartyPage } from '@features/thirdParty';
 
 function App() {
     return (
@@ -16,8 +16,8 @@ function App() {
                         <Route element={<AppLayout/>}>
                             <Route path={"auth/*"} element={<SignupPage/>}/>
                             <Route element={<AuthorizedRoute/>}>
-                                <Route path={"third-party/*"} element={<ThirdParty/>}/>
-                                <Route path={"/"} element={<InsuranceType/>}/>
+                                <Route path={"third-party/*"} element={<ThirdPartyPage/>}/>
+                                <Route path={"/"} element={<InsuranceTypePage/>}/>
                             </Route>
                         </Route>
                     </Routes>
